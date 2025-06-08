@@ -441,8 +441,9 @@ const MainPage = () => {
         {/* <AppLauncher /> */}
       </FadeInOnScroll>
 
-
+      <FadeInOnScroll>  
       <div className="space-y-8 pb-8">
+        
       <ContentRow
         title="Continue Watching"
         content={continueWatchingContent}
@@ -467,6 +468,7 @@ const MainPage = () => {
       />
 
     </div>
+    </FadeInOnScroll>
     </div >
   );
 };
