@@ -1,76 +1,83 @@
 import React from 'react';
-import { Search, User, Settings } from 'lucide-react';
+import { Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import fireTVLogo from '@/assets/Firetv.png';
 
 interface HeaderProps {
   onSocialPageToggle: () => void;
   showingSocialPage: boolean;
 }
+
 const Header = ({
   onSocialPageToggle,
   showingSocialPage
 }: HeaderProps) => {
-  return <header className="bg-black/95 backdrop-blur-sm p-4 sticky top-0 z-50">
-    <div className="flex items-center justify-between max-w-7xl mx-auto">
-      {/* Left side - Logo and Navigation */}
-      <div className="flex items-center space-x-8">
-        {/* Profile Icon */}
-        <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
-          <User className="w-6 h-6 text-white" />
+  return (
+<header className="h-20 bg-black/95 backdrop-blur-sm p-4 sticky top-0 z-50">
+      <div className="flex items-center justify-between max-w-7xl mx-auto">
+        {/* Left side - Logo and Navigation */}
+        <div className="flex items-center space-x-8">
+          {/* Fire TV Image Logo */}
+          <div className="w-16 h-16 rounded-full bg-transparent overflow-hidden flex items-center justify-center">
+            <img src={fireTVLogo} alt="Fire TV Logo" className="object-contain w-18 h-18 p-1" />
+          </div>
+
+          {/* Navigation */}
+          <nav className="flex space-x-6">
+            {/* Home Button */}
+            <Button
+              variant="ghost"
+              onClick={() => showingSocialPage && onSocialPageToggle()}
+              className={`text-lg font-medium px-4 py-2 rounded-none border-b-2 transition-colors ${
+                !showingSocialPage
+                  ? 'text-white border-white bg-transparent hover:bg-white/10'
+                  : 'text-gray-400 border-transparent hover:text-white hover:bg-white/10'
+              }`}
+            >
+              Home
+            </Button>
+
+            {/* Dummy Buttons now toggle social page */}
+            <Button
+              variant="ghost"
+              onClick={() => !showingSocialPage && onSocialPageToggle()}
+              className="text-lg font-medium text-gray-400 hover:text-white px-4 py-2 hover:bg-white/10"
+            >
+              Find
+            </Button>
+
+            <Button
+              variant="ghost"
+              onClick={() => !showingSocialPage && onSocialPageToggle()}
+              className="text-lg font-medium text-gray-400 hover:text-white px-4 py-2 hover:bg-white/10"
+            >
+              Live
+            </Button>
+
+            {/* Social Button */}
+            <Button
+              variant="ghost"
+              onClick={() => !showingSocialPage && onSocialPageToggle()}
+              className={`text-lg font-medium px-4 py-2 rounded-none border-b-2 transition-colors ${
+                showingSocialPage
+                  ? 'text-white border-white bg-transparent hover:bg-white/10'
+                  : 'text-gray-400 border-transparent hover:text-white hover:bg-white/10'
+              }`}
+            >
+              Social
+            </Button>
+          </nav>
         </div>
 
-        {/* Navigation */}
-        <nav className="flex space-x-6">
-          {/* Home Button */}
-          <Button
-            variant="ghost"
-            onClick={() => showingSocialPage && onSocialPageToggle()} // Only toggle if not already on Home
-            className={`text-lg font-medium px-4 py-2 rounded-none border-b-2 transition-colors ${!showingSocialPage
-                ? 'text-white border-white bg-transparent hover:bg-white/10'
-                : 'text-gray-400 border-transparent hover:text-white hover:bg-white/10'
-              }`}
-          >
-            Home
+        {/* Right side - Settings */}
+        <div className="flex items-center space-x-3">
+          <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+            <Settings className="w-6 h-6" />
           </Button>
-
-          {/* Static Buttons */}
-          <Button variant="ghost" className="text-lg font-medium text-gray-400 hover:text-white px-4 py-2 hover:bg-white/10">
-            Find
-          </Button>
-          <Button variant="ghost" className="text-lg font-medium text-gray-400 hover:text-white px-4 py-2 hover:bg-white/10">
-            Live
-          </Button>
-
-          {/* Social Button */}
-          <Button
-            variant="ghost"
-            onClick={() => !showingSocialPage && onSocialPageToggle()} // Only toggle if not already on Social
-            className={`text-lg font-medium px-4 py-2 rounded-none border-b-2 transition-colors ${showingSocialPage
-                ? 'text-white border-white bg-transparent hover:bg-white/10'
-                : 'text-gray-400 border-transparent hover:text-white hover:bg-white/10'
-              }`}
-          >
-            Social
-          </Button>
-        </nav>
-      </div>
-
-      {/* Right side - Apps and Settings */}
-      <div className="flex items-center space-x-3">
-        {/* Quick App Icons */}
-        <div className="flex space-x-2">
-
-
-
-
         </div>
-
-        {/* Settings */}
-        <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
-          <Settings className="w-6 h-6" />
-        </Button>
       </div>
-    </div>
-  </header>;
+    </header>
+  );
 };
+
 export default Header;

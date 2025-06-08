@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Plus, Users, Play, MoreHorizontal } from 'lucide-react';
+import { Plus, Users, Play, MoreHorizontal, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -8,6 +7,7 @@ interface Collection {
   id: string;
   name: string;
   contributors: string[];
+  isAI?: boolean;
   items: Array<{
     id: string;
     title: string;
@@ -33,12 +33,14 @@ const SocialCollections = () => {
     },
     {
       id: '2',
-      name: 'Sci-Fi Favorites',
-      contributors: ['Anvesh', 'Divyanshu', 'You'],
-      createdBy: 'Anvesh',
+      name: 'Romantic Mashup Thursday Morning',
+      contributors: ['You', 'Arav','Aryan','Chirag'],
+      createdBy: 'FireTV',
+      isAI: true,
       items: [
-        { id: '4', title: 'Dune', addedBy: 'Anvesh', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/zZ3Cv1lz61V9OXXvtCPVtCFTVP7.jpg', service: 'Prime Video' },
-        { id: '5', title: 'Avatar: The Way of Water', addedBy: 'Divyanshu', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9YteO4VWteiPmEbWYJRAeBTQZPD.jpg', service: 'Disney+' }
+        { id: '6', title: 'Avatar: The Way of Water', addedBy: 'FireTV', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg', service: 'Disney+' },
+        { id: '4', title: 'Dune', addedBy: 'FireTV', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/zZ3Cv1lz61V9OXXvtCPVtCFTVP7.jpg', service: 'Prime Video' },
+        { id: '5', title: 'Avatar: The Way of Water', addedBy: 'FireTV', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9YteO4VWteiPmEbWYJRAeBTQZPD.jpg', service: 'Disney+' }
       ]
     }
   ]);
@@ -58,7 +60,16 @@ const SocialCollections = () => {
 
       <div className="grid md:grid-cols-2 gap-6">
         {collections.map((collection) => (
-          <Card key={collection.id} className="bg-card/50 backdrop-blur-sm border border-border/30">
+          <Card key={collection.id} className="relative bg-card/50 backdrop-blur-sm border border-border/30">
+            
+            {/* AI tag top right */}
+            {collection.isAI && (
+              <div className="absolute top-2 right-2 flex items-center bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-2 py-0.5 rounded-md text-xs font-bold shadow-lg z-10">
+                <Sparkles className="w-3 h-3 mr-1" />
+                AI
+              </div>
+            )}
+
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
                 <CardTitle className="text-lg">{collection.name}</CardTitle>
@@ -72,10 +83,15 @@ const SocialCollections = () => {
                 <span>{collection.items.length} items</span>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="text-sm text-muted-foreground">Contributors:</span>
+                <span className="text-sm text-muted-foreground">
+                  {collection.createdBy === 'FireTV' ? 'Made For:' : 'Contributors:'}
+                </span>
                 <div className="flex -space-x-1">
                   {collection.contributors.map((contributor, index) => (
-                    <div key={index} className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 border border-background flex items-center justify-center text-white text-xs font-bold">
+                    <div
+                      key={index}
+                      className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 border border-background flex items-center justify-center text-white text-xs font-bold"
+                    >
                       {contributor[0]}
                     </div>
                   ))}

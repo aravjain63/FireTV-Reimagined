@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, MessageSquare, Calendar, Star, Play, Plus } from 'lucide-react';
+import { Users, MessageSquare, Calendar, Star, Play, Plus, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContentCard from './ContentCard';
 import FriendActivity from './FriendActivity';
@@ -89,7 +89,7 @@ const SocialPage = () => {
                 <Users className="w-6 h-6 text-primary" />
                 <h1 className="text-3xl font-bold">Social Hub</h1>
               </div>
-              <p className="text-muted-foreground">Discover what your friends are watching and join the conversation</p>
+              <p className="text-muted-foreground">Connect with friends and discover what’s trending together. Get personalized picks and watchlist suggestions powered by smart AI — your social hub for shared entertainment on Fire TV.</p>
             </div>
 
             {/* Social Collections */}
@@ -104,7 +104,7 @@ const SocialPage = () => {
               
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 {watchParties.map((party) => (
-                  <div key={party.id} className="bg-card/30 backdrop-blur-sm rounded-lg p-4 border border-border/30">
+                  <div key={party.id} className="bg-card/50 backdrop-blur-sm rounded-lg p-4 border border-border/30">
                     <div className="flex items-start justify-between mb-3">
                       <div>
                         <h3 className="font-semibold text-lg">{party.title}</h3>
@@ -154,7 +154,7 @@ const SocialPage = () => {
             {/* Friends' Recommendations */}
             <div className="mb-8">
               <h2 className="text-xl font-bold mb-4 flex items-center">
-                <Star className="w-5 h-5 mr-2 text-primary" />
+                <Heart className="w-5 h-5 mr-2 text-red-400 text-primary" />
                 Recommended by Friends
               </h2>
               
@@ -178,15 +178,15 @@ const SocialPage = () => {
 
             {/* Social Stats */}
             <div className="grid md:grid-cols-3 gap-4">
-              <div className="bg-card/30 backdrop-blur-sm rounded-lg p-4 text-center">
+              <div className="bg-card/50 backdrop-blur-sm rounded-lg p-4 text-center">
                 <h3 className="text-2xl font-bold text-primary">127</h3>
                 <p className="text-sm text-muted-foreground">Hours watched together</p>
               </div>
-              <div className="bg-card/30 backdrop-blur-sm rounded-lg p-4 text-center">
+              <div className="bg-card/50 backdrop-blur-sm rounded-lg p-4 text-center">
                 <h3 className="text-2xl font-bold text-primary">23</h3>
                 <p className="text-sm text-muted-foreground">Shows discovered via friends</p>
               </div>
-              <div className="bg-card/30 backdrop-blur-sm rounded-lg p-4 text-center">
+              <div className="bg-card/50 backdrop-blur-sm rounded-lg p-4 text-center">
                 <h3 className="text-2xl font-bold text-primary">8</h3>
                 <p className="text-sm text-muted-foreground">Active friends this week</p>
               </div>

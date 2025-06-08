@@ -63,44 +63,48 @@ const MoodRecommender = () => {
     }
   ];
 
-  const mockRecommendations: Record<string, RecommendedContent[]> = {
-    'feel-good': [
-      { id: '1', title: 'The Office', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/mLyW3UTgi2lsMdtueYODcfAB9Ku.jpg', genre: 'Comedy', year: 2023, streamingService: 'Apple TV+' },
-      { id: '2', title: 'Brooklyn-99', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9AeiA1XtP5sel2tAf9LaGeUjhDb.jpg', genre: 'Comedy', year: 2020, streamingService: 'Netflix' },
-      { id: '3', title: 'The Big Bang Theory', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/sccDflItNho4OiHkzpiDxB2fUFw.jpg', genre: 'Comedy', year: 2020, streamingService: 'Netflix' },
-      { id: '4', title: 'How I Met Your Mother', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9YteO4VWteiPmEbWYJRAeBTQZPD.jpg', genre: 'Comedy', year: 2021, streamingService: 'NBC' },
-      { id: '5', title: 'Modern Family', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/x4lxFIhhrDI4nWtV8osnYwbGESV.jpg', genre: 'Comedy', year: 2020, streamingService: 'NBC' }
-    ],
-    'intense': [
-      { id: '6', title: 'The Boys', image: 'photo-1517604931442-7e0c8ed2963c', genre: 'Action', year: 2023, streamingService: 'Prime Video' },
-      { id: '7', title: 'Breaking Bad', image: 'photo-1440404653325-ab127d49abc1', genre: 'Drama', year: 2013, streamingService: 'Netflix' },
-      { id: '8', title: 'John Wick', image: 'photo-1489599828345-e2f5b0b3915f', genre: 'Action', year: 2023, streamingService: 'Prime Video' },
-      { id: '9', title: 'The Dark Knight', image: 'photo-1578662996442-48f60103fc96', genre: 'Action', year: 2008, streamingService: 'HBO Max' },
-      { id: '10', title: 'Mad Max: Fury Road', image: 'photo-1514933651103-005eec06c04b', genre: 'Action', year: 2015, streamingService: 'HBO Max' }
-    ],
-    'relaxing': [
-      { id: '11', title: 'The Great British Bake Off', image: 'photo-1514933651103-005eec06c04b', genre: 'Reality', year: 2023, streamingService: 'Netflix' },
-      { id: '12', title: 'Planet Earth', image: 'photo-1440404653325-ab127d49abc1', genre: 'Documentary', year: 2023, streamingService: 'BBC' },
-      { id: '13', title: 'Studio Ghibli Collection', image: 'photo-1489599828345-e2f5b0b3915f', genre: 'Animation', year: 2023, streamingService: 'Netflix' },
-      { id: '14', title: 'The Crown', image: 'photo-1578662996442-48f60103fc96', genre: 'Drama', year: 2023, streamingService: 'Netflix' },
-      { id: '15', title: 'Call the Midwife', image: 'photo-1517604931442-7e0c8ed2963c', genre: 'Drama', year: 2023, streamingService: 'BBC' }
-    ],
-    'energizing': [
-      { id: '16', title: 'Marvel\'s Avengers', image: 'photo-1517604931442-7e0c8ed2963c', genre: 'Action', year: 2023, streamingService: 'Disney+' },
-      { id: '17', title: 'Top Gun: Maverick', image: 'photo-1489599828345-e2f5b0b3915f', genre: 'Action', year: 2022, streamingService: 'Prime Video' },
-      { id: '18', title: 'The Fast Saga', image: 'photo-1440404653325-ab127d49abc1', genre: 'Action', year: 2023, streamingService: 'HBO Max' },
-      { id: '19', title: 'Mission: Impossible', image: 'photo-1578662996442-48f60103fc96', genre: 'Action', year: 2023, streamingService: 'Prime Video' },
-      { id: '20', title: 'Spider-Man: No Way Home', image: 'photo-1514933651103-005eec06c04b', genre: 'Action', year: 2021, streamingService: 'Disney+' }
-    ],
-    'mysterious': [
-      { id: '21', title: 'Dark', image: 'photo-1514933651103-005eec06c04b', genre: 'Sci-Fi', year: 2020, streamingService: 'Netflix' },
-      { id: '22', title: 'Sherlock', image: 'photo-1440404653325-ab127d49abc1', genre: 'Mystery', year: 2017, streamingService: 'Netflix' },
-      { id: '23', title: 'The X-Files', image: 'photo-1489599828345-e2f5b0b3915f', genre: 'Sci-Fi', year: 2018, streamingService: 'Hulu' },
-      { id: '24', title: 'True Detective', image: 'photo-1578662996442-48f60103fc96', genre: 'Crime', year: 2023, streamingService: 'HBO Max' },
-      { id: '25', title: 'Westworld', image: 'photo-1517604931442-7e0c8ed2963c', genre: 'Sci-Fi', year: 2022, streamingService: 'HBO Max' }
-    ]
-  };
-
+const mockRecommendations: Record<string, RecommendedContent[]> = {
+  'feel-good': [
+    { id: '1', title: 'The Office', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/mLyW3UTgi2lsMdtueYODcfAB9Ku.jpg', genre: 'Comedy', year: 2023, streamingService: 'Apple TV+' },
+    { id: '2', title: 'Brooklyn-99', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9AeiA1XtP5sel2tAf9LaGeUjhDb.jpg', genre: 'Comedy', year: 2020, streamingService: 'Netflix' },
+    { id: '3', title: 'The Big Bang Theory', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/sccDflItNho4OiHkzpiDxB2fUFw.jpg', genre: 'Comedy', year: 2020, streamingService: 'Netflix' },
+    { id: '4', title: 'How I Met Your Mother', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9YteO4VWteiPmEbWYJRAeBTQZPD.jpg', genre: 'Comedy', year: 2021, streamingService: 'NBC' },
+    { id: '5', title: 'Modern Family', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/x4lxFIhhrDI4nWtV8osnYwbGESV.jpg', genre: 'Comedy', year: 2020, streamingService: 'NBC' }
+  ],
+  'intense': [
+    { id: '6', title: 'Breaking Bad', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/mLyW3UTgi2lsMdtueYODcfAB9Ku.jpg', genre: 'Drama', year: 2008, streamingService: 'Netflix' },
+    { id: '7', title: 'Money Heist', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg', genre: 'Action', year: 2017, streamingService: 'Netflix' },
+    { id: '8', title: 'Peaky Blinders', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/sccDflItNho4OiHkzpiDxB2fUFw.jpg', genre: 'Crime', year: 2013, streamingService: 'Netflix' },
+    { id: '9', title: 'The Boys', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/x4lxFIhhrDI4nWtV8osnYwbGESV.jpg', genre: 'Superhero', year: 2019, streamingService: 'Amazon Prime' },
+    { id: '10', title: 'Stranger Things', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg', genre: 'Sci-Fi', year: 2016, streamingService: 'Netflix' }
+  ],
+  'relaxing': [
+    // { id: '11', title: 'Chef’s Table', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/1D3KrMMyQJJpTSGjf83uVChP3uj.jpg', genre: 'Documentary', year: 2015, streamingService: 'Netflix' },
+    // { id: '12', title: 'Our Planet', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/w4brGz07hrzpykLT09WNwZ1JPU2.jpg', genre: 'Nature', year: 2019, streamingService: 'Netflix' },
+    // { id: '13', title: 'The Great British Bake Off', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/tuFaWiqX0TXoWU2RhHx2n2JK0Hg.jpg', genre: 'Reality', year: 2010, streamingService: 'Netflix' },
+    // { id: '14', title: 'Bob Ross: Beauty is Everywhere', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/8zWk8F7m3UsM4Xj6TxJqUJBuFXr.jpg', genre: 'Art', year: 1991, streamingService: 'Netflix' },
+    // { id: '15', title: 'Moving Art', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/7XcGJzCyAmYhEuJWv9UmEVFszqZ.jpg', genre: 'Documentary', year: 2015, streamingService: 'Netflix' }
+    { id: '6', title: 'Breaking Bad', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/mLyW3UTgi2lsMdtueYODcfAB9Ku.jpg', genre: 'Drama', year: 2008, streamingService: 'Netflix' },
+    { id: '7', title: 'Money Heist', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg', genre: 'Action', year: 2017, streamingService: 'Netflix' },
+    { id: '8', title: 'Peaky Blinders', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/sccDflItNho4OiHkzpiDxB2fUFw.jpg', genre: 'Crime', year: 2013, streamingService: 'Netflix' },
+    { id: '9', title: 'The Boys', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/x4lxFIhhrDI4nWtV8osnYwbGESV.jpg', genre: 'Superhero', year: 2019, streamingService: 'Amazon Prime' },
+    { id: '10', title: 'Stranger Things', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg', genre: 'Sci-Fi', year: 2016, streamingService: 'Netflix' }
+  ],
+  'energizing': [
+    { id: '16', title: 'The Office', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/mLyW3UTgi2lsMdtueYODcfAB9Ku.jpg', genre: 'Comedy', year: 2023, streamingService: 'Apple TV+' },
+    { id: '17', title: 'Parks and Recreation', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/qhUTzM8N0M0zBXXQxIko3v8xG9B.jpg', genre: 'Comedy', year: 2009, streamingService: 'Peacock' },
+    { id: '18', title: 'Ted Lasso', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/gdIrmf2DdY5mgN6ycVP0XlzKzbE.jpg', genre: 'Comedy', year: 2020, streamingService: 'Apple TV+' },
+    { id: '19', title: 'The Marvelous Mrs. Maisel', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/6eY0nHYlWZgprjLkyTn1Hf7ZkzX.jpg', genre: 'Drama', year: 2017, streamingService: 'Amazon Prime' },
+    { id: '20', title: 'Unbreakable Kimmy Schmidt', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/7Lbo9kRKH4lsFegMTldWdAiYkY3.jpg', genre: 'Comedy', year: 2015, streamingService: 'Netflix' }
+  ],
+  'mysterious': [
+    { id: '21', title: 'Dark', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg', genre: 'Sci-Fi', year: 2020, streamingService: 'Netflix' },
+    { id: '22', title: 'Sherlock', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/f9zGxLHGyQB10cMDZNY5ZcGKhZi.jpg', genre: 'Mystery', year: 2017, streamingService: 'Netflix' },
+    { id: '23', title: 'The X-Files', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/l3DIpTdf6MdYzBfKYd3Z9xGc5Un.jpg', genre: 'Sci-Fi', year: 2018, streamingService: 'Hulu' },
+    { id: '24', title: 'True Detective', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/f8Ng1Sgb3VLiSwAvrfKeQPzvlfr.jpg', genre: 'Crime', year: 2023, streamingService: 'HBO Max' },
+    { id: '25', title: 'Westworld', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/y55oBgf6bVMI7sFNXwJDrSIxPQt.jpg', genre: 'Sci-Fi', year: 2022, streamingService: 'HBO Max' }
+  ]
+};
   const handleMoodSelection = async (moodId: string) => {
     setSelectedMood(moodId);
     setIsLoading(true);
