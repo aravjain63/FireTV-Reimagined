@@ -20,17 +20,7 @@ interface Collection {
 
 const SocialCollections = () => {
   const [collections] = useState<Collection[]>([
-    {
-      id: '1',
-      name: 'Weekend Binge Watch',
-      contributors: ['You', 'Arav', 'Aryan'],
-      createdBy: 'You',
-      items: [
-        { id: '1', title: 'The Bear', addedBy: 'Arav', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/zZ3Cv1lz61V9OXXvtCPVtCFTVP7.jpg', service: 'Hulu' },
-        { id: '2', title: 'Wednesday', addedBy: 'Aryan', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9YteO4VWteiPmEbWYJRAeBTQZPD.jpg', service: 'Netflix' },
-        { id: '3', title: 'House of the Dragon', addedBy: 'You', image: 'https://wallpapercat.com/w/full/8/c/f/124601-3840x2160-desktop-4k-stranger-things-wallpaper-image.jpg', service: 'HBO Max' }
-      ]
-    },
+    
     {
       id: '2',
       name: 'Romantic Mashup Thursday Morning',
@@ -41,6 +31,17 @@ const SocialCollections = () => {
         { id: '6', title: 'Avatar: The Way of Water', addedBy: 'FireTV', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg', service: 'Disney+' },
         { id: '4', title: 'Dune', addedBy: 'FireTV', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/zZ3Cv1lz61V9OXXvtCPVtCFTVP7.jpg', service: 'Prime Video' },
         { id: '5', title: 'Avatar: The Way of Water', addedBy: 'FireTV', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9YteO4VWteiPmEbWYJRAeBTQZPD.jpg', service: 'Disney+' }
+      ]
+    },
+    {
+      id: '1',
+      name: 'Weekend Binge Watch',
+      contributors: ['You', 'Arav', 'Aryan'],
+      createdBy: 'You',
+      items: [
+        { id: '1', title: 'The Bear', addedBy: 'Arav', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/zZ3Cv1lz61V9OXXvtCPVtCFTVP7.jpg', service: 'Hulu' },
+        { id: '2', title: 'Wednesday', addedBy: 'Aryan', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9YteO4VWteiPmEbWYJRAeBTQZPD.jpg', service: 'Netflix' },
+        { id: '3', title: 'House of the Dragon', addedBy: 'You', image: 'https://wallpapercat.com/w/full/8/c/f/124601-3840x2160-desktop-4k-stranger-things-wallpaper-image.jpg', service: 'HBO Max' }
       ]
     }
   ]);

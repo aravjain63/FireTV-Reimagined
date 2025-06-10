@@ -180,7 +180,7 @@ const MainPage = () => {
     {
       id: '1',
       title: 'The Bear',
-      image: 'photo-1514933651103-005eec06c04b',
+      image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9AeiA1XtP5sel2tAf9LaGeUjhDb.jpg',
       rating: 4.8,
       duration: '30 min episodes',
       year: 2023,
@@ -276,7 +276,7 @@ const MainPage = () => {
     {
       id: '2',
       title: 'Succession',
-      image: 'https://wallpapercat.com/w/full/8/c/f/124601-3840x2160-desktop-4k-stranger-things-wallpaper-image.jpg',
+      image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg',
       rating: 4.7,
       duration: '1h episodes',
       year: 2023,
@@ -349,12 +349,35 @@ const MainPage = () => {
     {
       id: '1',
       title: 'The Bear',
-      image: 'photo-1514933651103-005eec06c04b',
+      image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/4pfXAnWxOfEJsUgDPW0zqzs5UWv.jpg',
       rating: 4.8,
       duration: '30 min episodes',
       year: 2023,
       genre: 'Comedy-Drama',
       watchedBy: ['Arav', 'Aryan'],
+      streamingService: 'Prime Video'
+    },
+    {
+      id: '4',
+      title: 'The Menu',
+      image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9YteO4VWteiPmEbWYJRAeBTQZPD.jpg',
+      rating: 4.3,
+      duration: '1h 47m',
+      year: 2022,
+      genre: 'Thriller',
+      watchedBy: ['Arav'],
+      streamingService: 'Prime Video'
+    }
+    ,
+    {
+      id: '4',
+      title: 'Silicon Valley',
+      image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/x4lxFIhhrDI4nWtV8osnYwbGESV.jpg',
+      rating: 4.3,
+      duration: '1h 47m',
+      year: 2022,
+      genre: 'Thriller',
+      watchedBy: ['Arav'],
       streamingService: 'Prime Video'
     },
     {
@@ -403,30 +426,7 @@ const MainPage = () => {
       watchedBy: ['Arav'],
       streamingService: 'Prime Video'
     }
-    ,
-    {
-      id: '4',
-      title: 'The Menu',
-      image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9YteO4VWteiPmEbWYJRAeBTQZPD.jpg',
-      rating: 4.3,
-      duration: '1h 47m',
-      year: 2022,
-      genre: 'Thriller',
-      watchedBy: ['Arav'],
-      streamingService: 'Prime Video'
-    }
-    ,
-    {
-      id: '4',
-      title: 'Silicon Valley',
-      image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/sccDflItNho4OiHkzpiDxB2fUFw.jpg',
-      rating: 4.3,
-      duration: '1h 47m',
-      year: 2022,
-      genre: 'Thriller',
-      watchedBy: ['Arav'],
-      streamingService: 'Prime Video'
-    }
+    
   ];
     return (
     <div className="relative min-h-screen bg-background overflow-hidden">
