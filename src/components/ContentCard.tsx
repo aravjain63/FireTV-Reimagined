@@ -1,8 +1,7 @@
-
-import React from 'react';
-import { Play, Plus, Heart } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import StreamingBadge from './StreamingBadge';
+import React from "react";
+import { Play, Plus, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import StreamingBadge from "./StreamingBadge";
 
 interface ContentCardProps {
   title: string;
@@ -11,43 +10,47 @@ interface ContentCardProps {
   duration?: string;
   year?: number;
   genre?: string;
-  size?: 'small' | 'medium' | 'large';
+  size?: "small" | "medium" | "large";
   showWatchedBy?: string[];
   streamingService?: string;
 }
 
-const ContentCard = ({ 
-  title, 
-  image, 
-  rating = 4.2, 
-  duration = "2h 15m", 
-  year = 2023, 
+const ContentCard = ({
+  title,
+  image,
+  rating = 4.2,
+  duration = "2h 15m",
+  year = 2023,
   genre = "Action",
-  size = 'medium',
+  size = "medium",
   showWatchedBy = [],
-  streamingService = "Netflix"
+  streamingService = "Netflix",
 }: ContentCardProps) => {
   const sizeClasses = {
-    small: 'w-48 h-28',
-    medium: 'w-56 h-32',
-    large: 'w-64 h-36'
+    small: "w-48 h-28",
+    medium: "w-56 h-32",
+    large: "w-64 h-36",
   };
 
   return (
     <div className="group relative rounded overflow-hidden transition-all duration-300 hover:scale-105 hover:z-10">
       <div className={`${sizeClasses[size]} relative bg-gray-900`}>
         <img
-          src={image.startsWith('http') ? image : `https://images.Chirag.com/${image}?auto=format&fit=crop&w=400&q=80`}
+          src={
+            image.startsWith("http")
+              ? image
+              : `https://images.Chirag.com/${image}?auto=format&fit=crop&w=400&q=80`
+          }
           alt={title}
           className="w-full h-full object-cover transition-transform duration-300"
         />
-        
+
         {/* Dark overlay on hover */}
         {/* <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
-        
+
         {/* Streaming Service Badge
         <StreamingBadge service={streamingService} /> */}
-        
+
         {/* Play button overlay */}
         {/* <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <Button size="sm" className="bg-white text-black hover:bg-gray-200 font-semibold">
@@ -81,7 +84,7 @@ const ContentCard = ({
           <span>{year} • {genre}</span>
           <span>★ {rating}</span>
         </div> */}
-        
+
         {/* {showWatchedBy.length > 0 && (
           <div className="mt-2 flex items-center text-xs text-blue-400">
             <div className="flex -space-x-1 mr-2">
