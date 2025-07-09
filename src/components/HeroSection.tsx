@@ -17,7 +17,7 @@ const HeroSection = () => {
       </div> */}
 
       {/* Content Overlay */}
-      <div className="relative z-10 h-full flex items-center px-8">
+      <div className="relative z-10 h-full flex items-center px-4 sm:px-8">
         <div className="max-w-2xl animate-fade-in pt-20">
           {/* Service Badge */}
           <div className="flex items-center space-x-3 mb-6">
