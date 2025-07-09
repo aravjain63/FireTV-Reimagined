@@ -1,38 +1,37 @@
-import React from "react";
-import { Settings } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import fireTVLogo from "@/assets/Firetv.png";
+import React from 'react';
+import { Settings } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import fireTVLogo from '@/assets/Firetv.png';
 
 interface HeaderProps {
   onSocialPageToggle: () => void;
   showingSocialPage: boolean;
 }
 
-const Header = ({ onSocialPageToggle, showingSocialPage }: HeaderProps) => {
+const Header = ({
+  onSocialPageToggle,
+  showingSocialPage
+}: HeaderProps) => {
   return (
-    <header className="min-h-16 h-auto sm:h-20 bg-black/95 backdrop-blur-sm p-3 sm:p-4 sticky top-0 z-50">
+<header className="h-20 bg-black/95 backdrop-blur-sm p-4 sticky top-0 z-50">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Left side - Logo and Navigation */}
-        <div className="flex items-center space-x-4 sm:space-x-8">
+        <div className="flex items-center space-x-8">
           {/* Fire TV Image Logo */}
           <div className="w-16 h-16 rounded-full bg-transparent overflow-hidden flex items-center justify-center">
-            <img
-              src={fireTVLogo}
-              alt="Fire TV Logo"
-              className="object-contain w-18 h-18 p-1"
-            />
+            <img src={fireTVLogo} alt="Fire TV Logo" className="object-contain w-18 h-18 p-1" />
           </div>
 
           {/* Navigation */}
-          <nav className="flex flex-wrap gap-x-3 gap-y-1 sm:space-x-6">
+          <nav className="flex space-x-6">
             {/* Home Button */}
             <Button
               variant="ghost"
               onClick={() => showingSocialPage && onSocialPageToggle()}
-              className={`text-base sm:text-lg font-medium px-4 py-2 rounded-none border-b-2 transition-colors ${
+              className={`text-lg font-medium px-4 py-2 rounded-none border-b-2 transition-colors ${
                 !showingSocialPage
-                  ? "text-white border-white bg-transparent hover:bg-white/10"
-                  : "text-gray-400 border-transparent hover:text-white hover:bg-white/10"
+                  ? 'text-white border-white bg-transparent hover:bg-white/10'
+                  : 'text-gray-400 border-transparent hover:text-white hover:bg-white/10'
               }`}
             >
               Home
@@ -42,7 +41,7 @@ const Header = ({ onSocialPageToggle, showingSocialPage }: HeaderProps) => {
             <Button
               variant="ghost"
               onClick={() => !showingSocialPage && onSocialPageToggle()}
-              className="text-base sm:text-lg font-medium text-gray-400 hover:text-white px-4 py-2 hover:bg-white/10"
+              className="text-lg font-medium text-gray-400 hover:text-white px-4 py-2 hover:bg-white/10"
             >
               Find
             </Button>
@@ -50,7 +49,7 @@ const Header = ({ onSocialPageToggle, showingSocialPage }: HeaderProps) => {
             <Button
               variant="ghost"
               onClick={() => !showingSocialPage && onSocialPageToggle()}
-              className="text-base sm:text-lg font-medium text-gray-400 hover:text-white px-4 py-2 hover:bg-white/10"
+              className="text-lg font-medium text-gray-400 hover:text-white px-4 py-2 hover:bg-white/10"
             >
               Live
             </Button>
@@ -59,10 +58,10 @@ const Header = ({ onSocialPageToggle, showingSocialPage }: HeaderProps) => {
             <Button
               variant="ghost"
               onClick={() => !showingSocialPage && onSocialPageToggle()}
-              className={`text-base sm:text-lg font-medium px-4 py-2 rounded-none border-b-2 transition-colors ${
+              className={`text-lg font-medium px-4 py-2 rounded-none border-b-2 transition-colors ${
                 showingSocialPage
-                  ? "text-white border-white bg-transparent hover:bg-white/10"
-                  : "text-gray-400 border-transparent hover:text-white hover:bg-white/10"
+                  ? 'text-white border-white bg-transparent hover:bg-white/10'
+                  : 'text-gray-400 border-transparent hover:text-white hover:bg-white/10'
               }`}
             >
               Social
@@ -72,11 +71,7 @@ const Header = ({ onSocialPageToggle, showingSocialPage }: HeaderProps) => {
 
         {/* Right side - Settings */}
         <div className="flex items-center space-x-3">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-gray-400 hover:text-white"
-          >
+          <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
             <Settings className="w-6 h-6" />
           </Button>
         </div>
