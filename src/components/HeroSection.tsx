@@ -1,10 +1,11 @@
-import React from "react";
-import { Play, Info } from "lucide-react";
-import { Button } from "@/components/ui/button";
+
+import React from 'react';
+import { Play, Info } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-[calc(100vh-4rem)] sm:min-h-[60vh] lg:min-h-[90vh] mb-8 px-0">
+    <div className="relative h-[90vh] mb-8 overflow-hidden mx-4">
       {/* Main Featured Banner */}
       {/* <div className="absolute inset-0">
         <img
@@ -15,8 +16,9 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
       </div> */}
-
+      
       {/* Content Overlay */}
+
       <div className="relative z-10 h-full flex items-center px-4 sm:px-8">
         <div className="max-w-2xl animate-fade-in pt-20">
           {/* Service Badge */}
@@ -29,45 +31,34 @@ const HeroSection = () => {
               Trending #1 in TV Shows
             </div>
           </div>
-
+          
           {/* Title */}
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-none">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-none">
             Stranger
             <br />
             <span className="text-red-500">Things</span>
           </h1>
-
+          
           {/* Metadata */}
           <div className="flex items-center space-x-4 mb-6 text-white">
-            <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-md text-sm font-medium">
-              TV-14
-            </span>
+            <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-md text-sm font-medium">TV-14</span>
             <span className="font-medium">2022</span>
             <span className="font-medium">4 Seasons</span>
             <span className="text-muted-foreground">Drama, Horror, Sci-Fi</span>
           </div>
-
+          
           {/* Description */}
           <p className="text-lg text-gray-200 mb-8 max-w-xl leading-relaxed font-light">
-            When a young boy vanishes, a small town uncovers a mystery involving
-            secret experiments, terrifying supernatural forces, and one strange
-            little girl.
+            When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.
           </p>
-
+          
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-2 sm:space-x-4">
-            <Button
-              size="lg"
-              className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
-            >
+          <div className="flex items-center space-x-4">
+            <Button size="lg" className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200">
               <Play className="w-5 h-5 mr-2 fill-current" />
               Watch Now
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white/50 text-white hover:bg-white/10 hover:border-white px-6 py-3 text-lg backdrop-blur-sm transition-all duration-200"
-            >
+            <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10 hover:border-white px-6 py-3 text-lg backdrop-blur-sm transition-all duration-200">
               <Info className="w-5 h-5 mr-2" />
               More Info
             </Button>
