@@ -19,7 +19,7 @@ const HeroSection = () => {
       {/* Content Overlay */}
       <div className="relative z-10 h-full flex items-center px-4 sm:px-8">
         <div className="max-w-2xl animate-fade-in pt-20">
-          {/* Service Badge */}
+          {/* Service Badge */} {/* comment */}
           <div className="flex items-center space-x-3 mb-6">
             <div className="bg-red-600 text-white px-4 py-1.5 rounded-md text-sm font-semibold tracking-wide">
               NETFLIX
@@ -29,14 +29,12 @@ const HeroSection = () => {
               Trending #1 in TV Shows
             </div>
           </div>
-
           {/* Title */}
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-none">
             Stranger
             <br />
             <span className="text-red-500">Things</span>
           </h1>
-
           {/* Metadata */}
           <div className="flex items-center space-x-4 mb-6 text-white">
             <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-md text-sm font-medium">
@@ -46,14 +44,12 @@ const HeroSection = () => {
             <span className="font-medium">4 Seasons</span>
             <span className="text-muted-foreground">Drama, Horror, Sci-Fi</span>
           </div>
-
           {/* Description */}
           <p className="text-lg text-gray-200 mb-8 max-w-xl leading-relaxed font-light">
             When a young boy vanishes, a small town uncovers a mystery involving
             secret experiments, terrifying supernatural forces, and one strange
             little girl.
           </p>
-
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-2 sm:space-x-4">
             <Button
