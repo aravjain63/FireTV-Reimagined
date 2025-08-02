@@ -76,16 +76,6 @@ A scalable, vector-based recommender system.
 
 ---
 
-## 🛰️ Scalable Infrastructure
 
-| Component                 | Technology                         |
-|--------------------------|-------------------------------------|
-| **Real-time Ingestion**  | AWS Kinesis                         |
-| **Fast Reads / Writes**  | DynamoDB + DAX (Accelerator)        |
-| **Batch Training**       | AWS SageMaker / EMR                 |
-| **Live Serving**         | AWS Lambda + OpenSearch             |
-| **Embedding Storage**    | Amazon S3 (static), DynamoDB (dynamic) |
-| **Latency Optimization** | Lambda@Edge, predictive pre-fetching, HNSW |
 
----
 
